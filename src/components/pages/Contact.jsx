@@ -1,0 +1,36 @@
+'use client';
+import './contact.css';
+import InitScrollScript from './contact'; // ✅ fixed import
+
+export default function Contact() {
+  return (
+    <div className="main-container">
+      <InitScrollScript /> {/* ✅ This runs useEffect inside script.js */}
+
+      {/* Left auto-scrolling image area */}
+      <div className="scroll-section">
+        <div className="scroll-track" id="scroll-track"></div>
+      </div>
+
+      {/* Right contact form */}
+      <div className="form-section">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <input type="text" placeholder="Name" className="full" name="name"
+            id="name" required />
+          <div className="row">
+            <input type="email"  name="email"
+              id="email" placeholder="E-Mail" required />
+            <input type="text"  name="phone"
+              id="phone" placeholder="Phone" required />
+          </div>
+          <textarea placeholder="Type Message" name="typeMessage"
+            id="typeMessage" required></textarea>
+          <div className="button-wrap">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
